@@ -29,6 +29,9 @@ class ContatoController extends Controller
         //armazenando o arquivo guardando o path -- por enquatno guardando uma string qualquer
         $contatoCriado->path_arquivo = $request->file('arquivo')->store('arquivos');
 
+        //pegando o ip usando
+        $contatoCriado->ip_acesso = $request->ip();
+
         //salvando no banco
         $contatoCriado->save();
 
