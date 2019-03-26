@@ -4,7 +4,7 @@
     <div class="container contato__container">
         <h1 class="title">Contato</h1>
 
-        <form action="/enviado" method="post" class="contato__form">
+        <form action="/contato/enviado" method="post" class="contato__form">
             {{-- necessario para evitar ataques de cross site request forgery --}} @csrf
             <div class="field">
                 <label class="label">Nome</label>
