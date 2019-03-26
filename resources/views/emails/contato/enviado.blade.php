@@ -9,7 +9,7 @@
 | Telefone      | {{$contato->telefone}}      |
 | Mensagem      | {{$contato->mensagem}} |
 | IP      | {{$contato->ip_acesso}} |
-| Enviado em:      | {{$contato->created_at->format('Y-m-d')}} |
+| Enviado em:      | {{$contato->created_at->format('d/m/Y - H:i')}} |
 @endcomponent
 
 @endcomponent

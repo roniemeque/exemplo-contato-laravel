@@ -37,6 +37,8 @@ class ContatoEnviado extends Mailable
     public function build()
     {
         return $this->subject('Novo contato')
-            ->markdown('emails.contato.enviado');
+            ->markdown('emails.contato.enviado')
+            //anexando arquivo
+            ->attachFromStorage($this->contato->path_arquivo);
     }
 }
