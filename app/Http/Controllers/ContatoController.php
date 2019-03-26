@@ -20,8 +20,16 @@ class ContatoController extends Controller
 
     public function salvar(Request $request)
     {
-        //ao inves de usar o Create e ja salvar no banco, vamos instanciar primeiro e depois salvar
+        //fazendo validacao -- como sao pequenas nao sera necessario criar um FormRequest custom
+        $request->validate([
+            'nome' => 'required|string',
+            'email' => 'required|string|email',
+            'telefone' => 'required|regex:/[0-9]{11}/',
+            'mensagem' => 'required|string',
+            'arquivo' => 'required|file|mimes:pdf,doc,docx,odt,txt|max:500'
+        ]);
 
+        //ao inves de usar o Create e ja salvar no banco, vamos instanciar primeiro e depois salvar
         //instaciando o model e preenchendo tudo que eh passivel de preenchimento (do fillable)
         $contatoCriado = new Contato;
         $contatoCriado->fill($request->all());
