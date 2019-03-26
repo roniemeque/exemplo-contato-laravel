@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Contato;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContatoEnviado;
 
 class ContatoController extends Controller
 {
@@ -42,6 +44,10 @@ class ContatoController extends Controller
 
         //salvando no banco
         $contatoCriado->save();
+
+        //mandando email
+        Mail::to('email@teste.com')
+            ->send(new ContatoEnviado($contatoCriado));
 
         //retornando a view do formulario com info que o contato foi enviado
         return view('paginas.contato')
