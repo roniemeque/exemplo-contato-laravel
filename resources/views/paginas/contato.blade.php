@@ -74,7 +74,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="button is-primary">Enviar</button>
+            <button type="submit" class="button is-primary" dusk="enviar-button">Enviar</button>
         </form>
     </div>
 
