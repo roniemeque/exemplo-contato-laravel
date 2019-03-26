@@ -43,6 +43,10 @@ class ContatoController extends Controller
         //salvando no banco
         $contatoCriado->save();
 
-        dd($contatoCriado);
+        //retornando a view do formulario com info que o contato foi enviado
+        return view('paginas.contato')
+            ->with([
+                'contatoFoiEnviado' => true
+            ]);
     }
 }

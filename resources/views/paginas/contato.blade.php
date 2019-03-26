@@ -20,6 +20,15 @@
                 </div>
             </article>
         </div>
+        @endif @if (isset($contatoFoiEnviado) && $contatoFoiEnviado)
+        <article class="message is-primary">
+            <div class="message-header">
+                <p>Enviado!</p>
+            </div>
+            <div class="message-body">
+                Muito obrigado!
+            </div>
+        </article>
         @endif
 
         <form action="/contato/enviado" method="post" class="contato__form" enctype="multipart/form-data">
