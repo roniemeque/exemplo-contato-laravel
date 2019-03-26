@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contato;
+use Illuminate\Support\Facades\Storage;
 
 class ContatoController extends Controller
 {
@@ -26,7 +27,7 @@ class ContatoController extends Controller
         $contatoCriado->fill($request->all());
 
         //armazenando o arquivo guardando o path -- por enquatno guardando uma string qualquer
-        $contatoCriado->path_arquivo = 'teste';
+        $contatoCriado->path_arquivo = $request->file('arquivo')->store('arquivos');
 
         //salvando no banco
         $contatoCriado->save();

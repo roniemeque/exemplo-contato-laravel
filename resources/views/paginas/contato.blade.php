@@ -4,7 +4,7 @@
     <div class="container contato__container">
         <h1 class="title">Contato</h1>
 
-        <form action="/contato/enviado" method="post" class="contato__form">
+        <form action="/contato/enviado" method="post" class="contato__form" enctype="multipart/form-data">
             {{-- necessario para evitar ataques de cross site request forgery --}} @csrf
             <div class="field">
                 <label class="label">Nome</label>
@@ -33,7 +33,7 @@
             <div class="field">
                 <div class="file">
                     <label class="file-label">
-                        <input class="file-input" type="file" name="resume">
+                        <input class="file-input" type="file" name="arquivo">
                         <span class="file-cta">
                         <span class="file-icon">
                             <i class="fas fa-upload"></i>
