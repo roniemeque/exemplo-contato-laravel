@@ -11,6 +11,13 @@
 |
 */
 
+//vamos fazer a pagina inicial redirecinar para pagina de contato
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/contato');
 });
+
+//pagina do formulario
+Route::get('/contato', 'ContatoController@index');
+
+//guardando o contato
+Route::post('/contato/enviado', 'ContatoController@salvar');
